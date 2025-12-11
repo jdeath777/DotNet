@@ -21,7 +21,7 @@ namespace WeatherAPI
 		{
 			var apiKey = _apiKey;
 
-			string APIURL = $"?key={apiKey}&q={cityName}";
+			string APIURL = $"current.json?key={apiKey}&q={cityName}";
 
 			var response = await _httpClient.GetAsync(APIURL);
 			return await response.Content.ReadAsStringAsync();
